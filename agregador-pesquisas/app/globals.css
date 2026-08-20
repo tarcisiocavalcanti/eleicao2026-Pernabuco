@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --paper: #eaece1;
+  --surface: #fffdf7;
+  --ink: #1a2e22;
+  --ink-muted: #52604f;
+  --accent-green: #0f5c46;
+  --accent-red: #a6332e;
+  --line: #c3cab4;
+  --line-strong: #8b9482;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-image: radial-gradient(circle at 1px 1px, rgba(26, 46, 34, 0.06) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* Header styled like the top of a boletim de urna / official protocol slip */
+.masthead {
+  border-bottom: 3px double var(--line-strong);
+  padding: 28px 0 18px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.masthead-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.stamp {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+  border-radius: 3px;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Filters bar */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.filters select,
+.filters input {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 7px 10px;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: var(--ink);
+}
+
+/* Pesquisa card, laid out like a printed bulletin entry */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-green);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 18px 10px 22px;
+  border-bottom: 1px dashed var(--line);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-inst {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-body {
+  padding: 14px 18px 18px 22px;
+}
+
+.results-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.results-row:last-child {
+  border-bottom: none;
+}
+
+.cand-name {
+  font-family: var(--font-body);
+}
+
+.cand-pct {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.cenario-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-green);
+  margin: 10px 0 4px;
+}
+
+.empty {
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Admin */
+.admin-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.admin-shell h1 {
+  font-family: var(--font-display);
+}
+
+.field {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 9px 10px;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 18px;
+  background: var(--accent-green);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0c4a38;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+
+.candidato-line {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.error-msg {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+  padding: 8px 12px;
+  margin-bottom: 14px;
+}
+
+.success-msg {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+  padding: 8px 12px;
+  margin-bottom: 14px;
+}
